@@ -166,6 +166,12 @@ class MyFrame1 ( wx.Frame ):
         
         self.m_menubar1.Append( self.m_menu1, u"File" ) 
         
+        self.m_menu2 = wx.Menu()
+        self.m_menuItem4 = wx.MenuItem( self.m_menu2, wx.ID_ANY, u"python", wx.EmptyString, wx.ITEM_NORMAL )
+        self.m_menu2.Append( self.m_menuItem4 )
+        
+        self.m_menubar1.Append( self.m_menu2, u"export" ) 
+        
         self.SetMenuBar( self.m_menubar1 )
         
         
@@ -200,6 +206,7 @@ class MyFrame1 ( wx.Frame ):
         self.Bind( wx.EVT_MENU, self.OnMenuOpenSelect, id = self.m_menuItem3.GetId() )
         self.Bind( wx.EVT_MENU, self.OnMenuSaveSelect, id = self.m_menuItem1.GetId() )
         self.Bind( wx.EVT_MENU, self.OnMenuQuitSelect, id = self.m_menuItem2.GetId() )
+        self.Bind( wx.EVT_MENU, self.OnExportPythonSelect, id = self.m_menuItem4.GetId() )
     
     def __del__( self ):
         pass
@@ -288,6 +295,9 @@ class MyFrame1 ( wx.Frame ):
         event.Skip()
     
     def OnMenuQuitSelect( self, event ):
+        event.Skip()
+    
+    def OnExportPythonSelect( self, event ):
         event.Skip()
     
 
